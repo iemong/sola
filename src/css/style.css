@@ -156,6 +156,10 @@ Object
   width: 60%;
 }
 
+.p-button--more {
+  margin-bottom: 20px;
+}
+
 .p-paragraph--about {
   width: 80%;
   margin: 0 auto;
