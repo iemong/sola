@@ -1,0 +1,205 @@
+//variable
+$bg1 : #ffcc00;
+$text_color : #130f30;
+$head_font : 'Exo', sans-serif;
+/* ==========================================================================
+Foundation
+========================================================================== */
+.h1 {
+    font-size: 104px;
+    font-weight: 500;
+}
+.h2 {
+    font-size: 42px;
+}
+.h3 {
+    font-size: 28px;
+}
+
+/* ==========================================================================
+Layout
+========================================================================== */
+#wrapper{
+    position: relative;
+    background-color: $text_color;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    background-color: $text_color;
+    display: none;
+    z-index: 5;
+}
+
+main {
+}
+
+section{
+    background-color: $bg1;
+}
+#top {
+    background-image: url(../images/bg1.jpg);
+    background-repeat: no-repeat;
+    background-position: center 0;
+    background-size: cover;
+}
+
+footer{
+    height: 800px;
+    background-color: $text_color;
+}
+/* ==========================================================================
+Object
+========================================================================== */
+
+//conponent
+.c-text {
+    font-family: $head_font;
+    color: $text_color;
+}
+
+.c-btn {
+    width: 200px;
+    font-size: 24px;
+    @at-root {
+       #{&}--top {
+           width: 180px;
+           height: 50px;
+           border: 2px solid $text_color;
+           border-radius: 8px 8px;
+           background-color: rgba(255, 255, 255, 0.3);
+           color: $text_color;
+       }
+    }
+}
+
+.c-headline{
+    margin-top: 100px;
+}
+
+.c-paragraph, .c-form__contents{
+  text-align:left;
+}
+.c-garelly__children{
+    margin-bottom: 10px;
+    box-sizing: border-box;
+
+    img{
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    @at-root{
+        #{&}--hover{
+            width: 100%;
+            height: 100%;
+            background-color: rgba(19,15,48,0.7);
+            color: white;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+            cursor: pointer;
+            z-index: 2;
+            p{
+                text-align: left;
+                box-sizing: border-box;
+                padding-top: 5px;
+                padding-left: 10px;
+            }
+        }
+    }
+}
+.c-imageBox{
+    position: relative;
+}
+.c-form__contents{
+    margin-bottom: 10px;
+    & label{
+    margin-left: 5px;
+    }
+    & textarea{
+        height: 102px;
+    }
+    .help-block{
+            display: inline-block;
+            font-size: 10px;
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: 2px;
+    }
+    
+}
+//project
+
+.p-title {
+}
+.p-nav{
+    background-color: $text_color;
+    box-sizing: border-box;
+    margin-right: 50px;
+    margin-bottom: 0px;
+    float: right;
+    @at-root{
+        #{&}__child {
+            height: 60px;
+            line-height: 60px;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -o-box;
+            display: box;
+            -webkit-box-align: center;
+            -moz-box-align: center;
+            -o-box-align: center;
+            float: left;
+            margin-left: 25px;
+
+            @at-root{
+                #{&}__link{
+                    color: $bg1;
+                    &:hover{
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+.p-logo{
+  max-width: 320px;
+  width: 60%;
+}
+.p-paragraph--about{
+    width: 80%;
+    margin: 0 auto;
+}
+.p-garelly--works{
+    margin-top: 40px;
+
+}
+.p-form{
+    margin-top: 40px;
+
+    @at-root{
+        #{&}__input{
+            margin-bottom: 30px;
+        }
+        #{&}__output{
+            width: 200px;
+        }
+    }
+
+}
+.p-modal{
+    @at-root{
+        #{&}__close{
+            cursor: pointer;
+        }
+        #{&}__contents{
+            
+        }
+    }
+}
+//utility
