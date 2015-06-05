@@ -33,9 +33,7 @@ $(function(){
     garelly_hover();
 
     //modal
-    $('#myModal').on('shown.bs.modal', function () {
-        $('#myInput').focus();
-    });
+    modal();
 
 });
 //----------resize--------------------------
@@ -67,19 +65,16 @@ function glNavi_animation(){
 function glNavi_hover(){
     $(this).hover(function(){
         $(this).css({
-            'color': '#ffcc00'
+            'color': '#ffab00'
         }).parent().css({
-            'background-image' : 'url(../images/icon_top.png)',
-            'background-position' : 'center 7px',
-            'background-repeat' : 'no-repeat',
-            'background-size' : '16px'
+            'border-bottom': '4px solid #ffab00'
         });
     },
                   function(){
         $(this).css({
-            'color': '#ffcc00'
+            'color': '#ffab00'
         }).parent().css({
-            'background-image' : "none"
+            'border-bottom': 'none'
         });
 
     });
@@ -130,4 +125,30 @@ function garelly_resize(){
     $(garelly_child).find(".c-garelly__children--hover").css({
         'width': garelly_width
     });
+}
+
+//----------modal---------------
+function modal(){
+    var current_scrollY;
+    
+    
+    $('.c-imageBox').on('click', function(){
+        current_scrollY = $(window).scrollTop();
+        var index = $('.c-imageBox').index(this);
+        
+        $("#wrapper").css({
+            position : 'fixed',
+            width : '100%',
+            top : -1 * current_scrollY
+        });
+        var height = 50;
+        $('.p-modal').show().find(".p-modal__wrap").css("top", height).find('.c-modal__content').eq(index).show();
+    });
+    
+    $('.p-modal__close').on('click', function(){
+        $( '#wrapper' ).attr( { style: '' } );
+        $( 'html, body' ).prop( { scrollTop: current_scrollY } );
+        $('.p-modal').css("display", "none").find('.c-modal__content').hide();
+    });
+    
 }

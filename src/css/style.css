@@ -8,6 +8,7 @@ Foundation
 
 .h2 {
   font-size: 42px;
+  margin-bottom: 30px;
 }
 
 .h3 {
@@ -17,6 +18,10 @@ Foundation
 /* ==========================================================================
 Layout
 ========================================================================== */
+body {
+  font-family: "Exo", Meiryo, Tahoma, Verdana, Arial, sans-serif;
+}
+
 #wrapper {
   position: relative;
   background-color: #130f30;
@@ -25,14 +30,14 @@ Layout
 header {
   position: fixed;
   width: 100%;
-  height: 60px;
+  height: 40px;
   background-color: #130f30;
   display: none;
   z-index: 5;
 }
 
 section {
-  background-color: #ffcc00;
+  background-color: #FFC107;
 }
 
 #top {
@@ -42,16 +47,24 @@ section {
   background-size: cover;
 }
 
+#contact {
+  padding-bottom: 30px;
+}
+
 footer {
-  height: 800px;
   background-color: #130f30;
+  color: #ffab00;
+  text-align: center;
+  vertical-align: middle;
+  margin: 0 auto;
+  font-family: arial;
 }
 
 /* ==========================================================================
 Object
 ========================================================================== */
 .c-text {
-  font-family: "Exo", sans-serif;
+  font-family: "Exo", Meiryo, Tahoma, Verdana, Arial, sans-serif;
   color: #130f30;
 }
 
@@ -101,6 +114,7 @@ Object
   box-sizing: border-box;
   padding-top: 5px;
   padding-left: 10px;
+  color: #FFC107;
 }
 
 .c-imageBox {
@@ -124,16 +138,34 @@ Object
   margin-left: 2px;
 }
 
+.c-modal__content {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  display: none;
+}
+.c-modal__content iframe {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
 .p-nav {
   background-color: #130f30;
   box-sizing: border-box;
   margin-right: 50px;
   margin-bottom: 0px;
   float: right;
+  text-align: center;
 }
 .p-nav__child {
-  height: 60px;
-  line-height: 60px;
+  width: 70px;
+  height: 40px;
+  line-height: 40px;
   display: -webkit-box;
   display: -moz-box;
   display: -o-box;
@@ -142,12 +174,20 @@ Object
   -moz-box-align: center;
   -o-box-align: center;
   float: left;
-  margin-left: 25px;
+}
+.p-nav__child a {
+  margin: 0 auto;
 }
 .p-nav__child__link {
-  color: #ffcc00;
+  color: #ffab00;
+  text-decoration: none;
+  display: block;
+  outline: none;
 }
 .p-nav__child__link:hover {
+  text-decoration: none;
+}
+.p-nav__child__link:focus {
   text-decoration: none;
 }
 
@@ -163,6 +203,11 @@ Object
 .p-paragraph--about {
   width: 80%;
   margin: 0 auto;
+}
+.p-paragraph--about img {
+  display: block;
+  width: 100%;
+  margin-top: 30px;
 }
 
 .p-garelly--works {
@@ -180,6 +225,42 @@ Object
   width: 200px;
 }
 
+.p-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 6;
+}
+.p-modal__wrap {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  text-align: center;
+  margin: 0 auto;
+}
+
 .p-modal__close {
   cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #FFC107;
+  width: 50px;
+  height: 50px;
+  line-height: 65px;
+  text-align: center;
+}
+
+.p-modal__contents {
+  margin: 0 auto;
+  padding: 50px;
+  text-align: center;
+  background-color: #130f30;
+}
+.p-modal__contents ul {
+  margin-bottom: 0;
 }
